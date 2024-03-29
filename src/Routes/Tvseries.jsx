@@ -21,6 +21,7 @@ const Tvseries = () => {
   const tvSeries = useSelector((state) => state.addTvSeriesDetails.tvDetails);
   // console.log(tvSeries, "from tvseries component");
   useEffect(() => {
+    document.title = "Tv Series"
     const getfunt = async () => {
       try {
         const options = {

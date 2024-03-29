@@ -1,10 +1,13 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import Spiner from '../../../components/spinerFolder/Spiner'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Recommendation = () => {
   AOS.init();
+  useEffect(() => {
+    document.title = `Recommendation Details Page`
+   }, [])
     const allDetails = useSelector((state)=>state.addMoviesDetails.recommendation)
         // console.log(allDetails)
         if(allDetails === null || !allDetails){

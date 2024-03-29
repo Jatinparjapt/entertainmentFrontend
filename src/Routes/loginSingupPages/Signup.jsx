@@ -1,4 +1,4 @@
-import React, { useState , useMemo } from "react";
+import React, { useState , useMemo, useEffect } from "react";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import { Link, useNavigate } from "react-router-dom";
 import facbook from "./facbook.jpeg";
@@ -21,6 +21,9 @@ const Signup = () => {
   const getStatus = useSelector(state=>state.userLoginDetails.newUserResponse.status)
   // console.log(getStatus , "")
    useMemo(() => getStatus, [getStatus])
+   useEffect(() => {
+    document.title = `Signup`
+   }, [])
   const styles = {
     width: "50px",
     height: "50px",

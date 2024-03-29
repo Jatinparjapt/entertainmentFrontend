@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Bookmark = () => {
   const navigate = useNavigate();
   useEffect(() => {
+    document.title = "Bookmarks"
     const cookie = Cookies.get("loginCookies")
     if(!cookie){
       // console.log(cookie)

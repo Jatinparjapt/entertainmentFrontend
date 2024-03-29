@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, {useEffect}  from 'react'
 import notFound from "./image.png"
 import useSound from 'use-sound';
 import laughing from "./laugh.mp3";
@@ -11,11 +11,15 @@ const PageNotFound = () => {
   const [play2] = useSound(warning)
   const handleMouseEnter = () => {
     if(hours>13){
-      play();
+      play(); 
     }else{
       play2()
     }
   };
+  useEffect(() => {
+    document.title = "Page Not Found";
+  }, []);
+  
   // const [audio] = useState(new Audio(''));
   return (
     <div  className='flex  h-[90vh]' >

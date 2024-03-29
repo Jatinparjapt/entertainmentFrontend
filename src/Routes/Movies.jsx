@@ -27,6 +27,7 @@ const Movies = () => {
   // console.log(movie.details, "from movies comp")
   // make get api to get all trending movie
   useEffect(() => {
+    document.title = "Movies";
     // console.log("useEffect Called in movie component")
     const getMoviesAndTvseries = async ()=>{
       // try and catch block to handle erros

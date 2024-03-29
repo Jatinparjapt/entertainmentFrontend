@@ -1,4 +1,4 @@
-import React, { useState ,useMemo } from "react";
+import React, { useState ,useMemo, useEffect } from "react";
 import TheatersIcon from "@mui/icons-material/Theaters";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,6 +15,9 @@ const Login = () => {
   const logedUser = useSelector(
     (state) => state.userLoginDetails.loggedUserDetails
   );
+  useEffect(() => {
+    document.title = `Login`
+   }, [])
   // console.log(logedUser.status , logedUser)
  useMemo(() => logedUser, [logedUser]);
   const styles = {
@@ -148,7 +151,7 @@ const Login = () => {
                 <h3 className="text-lg text-zinc-200 mb-3 ">
                   Don't have an Account ?{" "}
                   <Link to={"/singup"} className="text-blue-700">
-                    SingUp
+                    SignUp
                   </Link>
                 </h3>
               </div>

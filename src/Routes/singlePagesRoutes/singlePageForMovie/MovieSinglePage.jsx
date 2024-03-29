@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import Spiner from '../../../components/spinerFolder/Spiner';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const MovieSinglePage = () => {
   AOS.init();
+  useEffect(() => {
+    document.title = `Movie Details Page`
+   }, [])
     const movie = useSelector(state=>state.addMoviesDetails.data)
     // console.log(movie , 'from single page')
+
     if(movie === null || !movie ){
       return (
         <Spiner/>
       )
     }else{
       const {genres  ,vote_count , poster_path ,release_date, status,title , runtime ,spoken_languages ,overview  } = movie
+      
+      
    
   return (
     <>

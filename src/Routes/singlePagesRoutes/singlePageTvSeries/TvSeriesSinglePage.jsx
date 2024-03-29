@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Spiner from '../../../components/spinerFolder/Spiner'
@@ -6,6 +6,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 const TvSeriesSinglePage = () => {
   AOS.init();
+  useEffect(() => {
+    document.title = `TV Series details Page`
+   }, [])
     //1b0b297987b30bffd342b0f4266db55defd2b309 request token
     const tvSerieData = useSelector((state)=>state.addTvSeriesDetails.oneTvDetails)
     

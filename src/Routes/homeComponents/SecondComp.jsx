@@ -26,6 +26,7 @@ const SecondComp = () => {
   
   // calling setInterval to get real time update
   useEffect(() => {
+    document.title = "Home"
     setInterval(() => {
       const date = new Date();
       const hours = date.getHours();
