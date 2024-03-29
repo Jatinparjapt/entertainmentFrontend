@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {  Routes, Route } from 'react-router-dom';
+import Home from "./Routes/Home"
+import Bookmark from "./Routes/Bookmark"
+import Movies from "./Routes/Movies"
+import Tvseries from "./Routes/Tvseries"
+import Header from './components/Header';
+import MovieSinglePage from './Routes/singlePagesRoutes/singlePageForMovie/MovieSinglePage';
+import TvSeriesSinglePage from './Routes/singlePagesRoutes/singlePageTvSeries/TvSeriesSinglePage';
+import Recommendation from './Routes/singlePagesRoutes/singlePageRecommendation/Recommendation';
+import Login from './Routes/loginSingupPages/Login';
+import Signup from './Routes/loginSingupPages/Signup';
+import PageNotFound from './Routes/PageNotFound';
+// import Spiner from './components/spinerFolder/Spiner';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ console.clear()
+    return (
+    <>
+    {/* <Home/> */}
+    <Header/>
+    
+{/* <Spiner/> */}
+          
+           <Routes>
+          <Route exact path="" element={<Home/>} />
+          <Route exact path="login" element={<Login/>} />
+          <Route exact path="singup" element={<Signup/>} />
+          <Route path="bookmarks" element={<Bookmark/>} />
+          <Route path="movies" element={<Movies/>}/>
+          <Route path="tvseries" element={<Tvseries/>} />
+          <Route path="movie/:original_title" element={<MovieSinglePage/>}/>
+          <Route path="tvseries/:original_title" element={<TvSeriesSinglePage/>}/>
+          <Route path="recommendation/:original_title" element={<Recommendation/>}/>
+          <Route path="*" element={<PageNotFound/>}/>
+
+        </Routes>
+        {/* <Outlet /> */}
+       </>
   );
 }
 
