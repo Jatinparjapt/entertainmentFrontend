@@ -42,6 +42,9 @@ const Login = () => {
     event.preventDefault();
     dispatch(userLoginDetailsReducer(loginDetails));
     // console.log("dispatch called");
+    setTimeout(() => {
+      
+   
     if (loginDetails.email === "" && loginDetails.password === "") {
       toast.info("Enter details", {
         position: "top-right",
@@ -53,7 +56,7 @@ const Login = () => {
         progress: undefined,
         theme: "dark",
       });
-    } else if(!logedUser.status){
+    } else if(logedUser.status !== 200){
       toast.error("Some Error Occured", {
         position: "top-right",
         autoClose: 3000,
@@ -64,7 +67,7 @@ const Login = () => {
         progress: undefined,
         theme: "dark",
       });
-    } else{
+    } else if (logedUser.status === 200){
       toast.success("Login Successfully", {
         position: "top-right",
         autoClose: 3000,
@@ -76,10 +79,9 @@ const Login = () => {
         theme: "dark",
       });
       navigate("/");
-
       // console.log(loginDetails);
     }
-
+  }, 1000);
     // dispatch(userLoginDetailsReducer(loginDetails))
     // console.log(loginDetails)
   };

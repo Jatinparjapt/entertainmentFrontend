@@ -87,9 +87,7 @@ const loginUserSlice = createSlice({
             status: 200,
             loginType : "database"
           };
-        } else {
-          throw new Error("some errror");
-        }
+        } 
       })
       .addCase(userLoginDetailsReducer.pending, (state) => {
         state.loading = true;

@@ -19,7 +19,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const getStatus = useSelector(state=>state.userLoginDetails.newUserResponse.status)
-  // console.log(getStatus , "")
+  console.log(getStatus , "")
    useMemo(() => getStatus, [getStatus])
    useEffect(() => {
     document.title = `Signup`
@@ -51,6 +51,7 @@ const Signup = () => {
   // make api call when user click
   const createUserDetailsSendToBackend = (event) => {
     event.preventDefault();
+    
     if (
       newUserDetails.name === "" &&
       newUserDetails.email === "" &&
@@ -69,6 +70,8 @@ const Signup = () => {
     } else {
       if (isValid && isVaildEmail) {
         dispatch(userSingupDetailsReducer(newUserDetails));
+        console.log(getStatus , "inside red")
+        setTimeout(() => {
         if(getStatus === 201){
           toast.success("Account Created Successfully !", {
             position: "top-right",
@@ -80,10 +83,20 @@ const Signup = () => {
             progress: undefined,
             theme: "dark",
           });
-          setTimeout(() => {
             navigate("/login")
-          }, 100);
+        }else {
+          toast.info("User already  exist !", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
         }
+      }, 1000);
         // console.log(newUserDetails);
       }
     }
