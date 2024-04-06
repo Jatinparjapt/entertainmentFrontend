@@ -41,25 +41,13 @@ const Login = () => {
   const sendDataToServer = (event) => {
     event.preventDefault();
     dispatch(userLoginDetailsReducer(loginDetails));
+    // console.log(logedUser , "getting status")
     // console.log("dispatch called");
     setTimeout(() => {
-      
-   
     if (loginDetails.email === "" && loginDetails.password === "") {
       toast.info("Enter details", {
         position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    } else if(logedUser.status !== 200){
-      toast.error("Some Error Occured", {
-        position: "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -70,7 +58,7 @@ const Login = () => {
     } else if (logedUser.status === 200){
       toast.success("Login Successfully", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -79,9 +67,9 @@ const Login = () => {
         theme: "dark",
       });
       navigate("/");
-      // console.log(loginDetails);
-    }
-  }, 1000);
+     
+    } 
+  }, 800);
     // dispatch(userLoginDetailsReducer(loginDetails))
     // console.log(loginDetails)
   };
@@ -142,7 +130,7 @@ const Login = () => {
                 </p>
               )}
               <div className="flex justify-center m-8  ">
-                <button
+                <button type="button"
                   onClick={sendDataToServer}
                   className="text-xl p-2 bg-[#FC4747] rounded-lg text-zinc-200"
                 >
@@ -162,16 +150,16 @@ const Login = () => {
         </div>
       </form>
       <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
+       position="top-right"
+       autoClose={2000}
+       hideProgressBar
+       newestOnTop={false}
+       closeOnClick
+       rtl={false}
+       pauseOnFocusLoss
+       draggable
+       pauseOnHover={false}
+       theme="dark"
       />
     </>
   );

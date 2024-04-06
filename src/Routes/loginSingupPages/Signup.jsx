@@ -273,16 +273,16 @@ const Signup = () => {
         </div>
       </form>
       <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
+       position="top-right"
+       autoClose={2000}
+       hideProgressBar
+       newestOnTop={false}
+       closeOnClick
+       rtl={false}
+       pauseOnFocusLoss
+       draggable
+       pauseOnHover={false}
+       theme="dark"
       />
     </>
   );

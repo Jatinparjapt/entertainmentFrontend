@@ -82,10 +82,12 @@ const loginUserSlice = createSlice({
           localStorage.setItem("user", JSON.stringify(action.payload));
           return {
             ...state,
-            loggedUserDetails: action.payload,
+            loggedUserDetails: {
+              ...action.payload,
+              status: 200 // or whatever value you want to set
+            },
             loading: false,
-            status: 200,
-            loginType : "database"
+            loginType: "database"
           };
         } 
       })

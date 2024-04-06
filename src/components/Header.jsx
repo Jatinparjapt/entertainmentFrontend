@@ -45,13 +45,13 @@ const Header = () => {
       if (newUserDetails.status === 200) {
         toast.success("Logout Successfully", {
           position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
         });
         Cookies.remove("loginCookies");
         localStorage.removeItem("user");
@@ -63,7 +63,7 @@ const Header = () => {
       else{
         toast.success("Logout Successfully", {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -134,15 +134,15 @@ const Header = () => {
         </div>
       </section>
       <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
         newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
-        pauseOnHover
+        pauseOnHover={false}
         theme="dark"
       />
     </>
