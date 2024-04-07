@@ -44,7 +44,7 @@ const Header = () => {
       const newUserDetails = await axios(options);
       if (newUserDetails.status === 200) {
         toast.success("Logout Successfully", {
-          position: "top-right",
+        position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
