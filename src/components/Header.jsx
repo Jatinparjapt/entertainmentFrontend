@@ -134,16 +134,16 @@ const Header = () => {
         </div>
       </section>
       <ToastContainer
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="dark"
+       position="top-right"
+       autoClose={2000}
+       hideProgressBar={false}
+       closeOnClick={true}
+       closeButton={true}
+       rtl={false}
+       pauseOnFocusLoss
+       draggable
+       pauseOnHover={false}
+       theme="dark"
       />
     </>
   );

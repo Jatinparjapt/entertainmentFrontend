@@ -45,7 +45,7 @@ const Login = () => {
     // console.log("dispatch called");
     setTimeout(() => {
     if (loginDetails.email === "" && loginDetails.password === "") {
-      toast.info("Enter details", {
+      toast.error("Enter details", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -150,16 +150,16 @@ const Login = () => {
         </div>
       </form>
       <ToastContainer
-       position="top-right"
-       autoClose={2000}
-       hideProgressBar
-       newestOnTop={false}
-       closeOnClick
-       rtl={false}
-       pauseOnFocusLoss
-       draggable
-       pauseOnHover={false}
-       theme="dark"
+      position="top-right"
+      autoClose={2000}
+      hideProgressBar={false}
+      closeOnClick={true}
+      closeButton={true}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover={false}
+      theme="dark"
       />
     </>
   );

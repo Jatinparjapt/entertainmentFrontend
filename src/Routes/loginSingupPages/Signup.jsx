@@ -19,7 +19,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const getStatus = useSelector(state=>state.userLoginDetails.newUserResponse.status)
-  console.log(getStatus , "")
+  // console.log(getStatus , "")
    useMemo(() => getStatus, [getStatus])
    useEffect(() => {
     document.title = `Signup`
@@ -275,9 +275,9 @@ const Signup = () => {
       <ToastContainer
        position="top-right"
        autoClose={2000}
-       hideProgressBar
-       newestOnTop={false}
-       closeOnClick
+       hideProgressBar={false}
+       closeOnClick={true}
+       closeButton={true}
        rtl={false}
        pauseOnFocusLoss
        draggable

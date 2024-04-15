@@ -11,6 +11,8 @@ import Recommendation from './Routes/singlePagesRoutes/singlePageRecommendation/
 import Login from './Routes/loginSingupPages/Login';
 import Signup from './Routes/loginSingupPages/Signup';
 import PageNotFound from './Routes/PageNotFound';
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 // import Spiner from './components/spinerFolder/Spiner';
 function App() {
  console.clear()
@@ -18,7 +20,7 @@ function App() {
     <>
     {/* <Home/> */}
     <Header/>
-    
+  
 {/* <Spiner/> */}
           
            <Routes>
